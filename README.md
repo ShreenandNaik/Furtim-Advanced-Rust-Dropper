@@ -156,5 +156,5 @@ graph TD
     class Start_Build,Start_Exe startNode;
     class Evasion,Exit evasionNode;
 ```
-
-```
+## Lizenz
+Dieses Projekt ist unter der **[MIT License](LICENSE)** lizenziert.
