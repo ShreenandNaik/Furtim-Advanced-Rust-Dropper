@@ -76,7 +76,7 @@ fn main() {
         Err(_) => process::exit(1),
     };
 
-    /// --- Phase 2: Simple Execution ---    
+    // --- Phase 2: Simple Execution ---    
     unsafe {
         // 1. Allocate Memory
         // We request executable memory from the Windows OS.
