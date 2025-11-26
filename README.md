@@ -42,6 +42,9 @@ This phase focuses on obfuscating the shellcode signature and securely integrati
 - **Native Windows API**:
 
   Uses VirtualAlloc to allocate RWX (Read-Write-Execute) memory and CreateThread to execute the payload within the process memory.
+ **Note**: 
+Direct usage of `VirtualAlloc` with RWX permissions is a known indicator for EDR heuristics. For advanced evasion, consider implementing indirect syscalls or memory mapping techniques to bypass user-mode API hooks. -> Work in Progress
+
 - **Silent Operation**:
 
   All debug strings and console outputs are stripped from the release binary to minimize string-based detection signatures.
